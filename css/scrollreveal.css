@@ -1,0 +1,7 @@
+.home .text-container, 
+.container .illustration, 
+.container .description,
+.services-container, .service,
+.container .card {
+    visibility: hidden;
+}
