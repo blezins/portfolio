@@ -24,6 +24,12 @@ html {
     color: var(--vivid-color);
 }
 
+.box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 
 /* Header - Menu */
 .header {
@@ -42,10 +48,14 @@ html {
     background: var(--secondary-color);
     padding: .5rem 9rem;
 }
-.header .logo a {
+.header .logo a,
+.header .short-logo a {
     text-decoration: none;
     font-size: 2rem;
     color: var(--contrast-color);
+}
+.header .short-logo {
+    display: none;
 }
 .header .menu {
     align-self: center;
@@ -68,7 +78,7 @@ html {
     text-transform: uppercase;
     font-size: .8em;
 }
-.header .menu ul li a::after {
+.header .menu ul li a.underline::after {
     content: "";
     position: absolute;
     background-color: var(--vivid-color);
@@ -78,7 +88,7 @@ html {
     bottom: -3px;
     transition: .3s;
 }
-.header .menu ul li a:hover::after {
+.header .menu ul li a.underline:hover::after {
     width: 100%;
 }
 .header .btn {
@@ -93,6 +103,14 @@ html {
 }
 .header .btn:hover {
     background: transparent;
+}
+.header .menu-icon {
+    display: none;
+}
+.header .menu-icon i {
+    font-size: 1.5em;
+    color: var(--contrast-color);
+    transition: all .3s ease;
 }
 
 
@@ -243,7 +261,7 @@ html {
 .services-container {
     display: flex;
     justify-content: center;
-    gap: 5px;
+    gap: 15px;
 }
 .service {
     padding: 15px;
@@ -278,6 +296,7 @@ html {
     justify-content: space-evenly;
     position: relative;
     background: url(../svg/footer-waves.svg);
+    background-size: 100%;
     background-color: #222;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -404,4 +423,139 @@ html {
 }
 .footer .icons li a:hover {
     color: var(--vivid-color);
+}
+
+
+
+/* Responsividade */
+@media screen and (max-width: 1300px) {
+    .header, .home, .sobre, .habilidades, .servicos, .projetos, .footer {
+        padding: 1.5rem 3rem;
+    }
+    .header.active {
+        padding: .5rem 3rem;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .container .card {
+        width: 31.9%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .header .logo {
+        display: none;
+    }
+    .header .short-logo {
+        display: flex;
+        align-items: flex-start;
+    }
+    .header .menu ul li {
+        list-style: none;
+        margin-right: 10px;
+    }
+
+    .sobre .container .illustration {
+        width: 100%;
+    }
+    .sobre .container .illustration img {
+        width: 50%;
+    }
+    .sobre .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+    .sobre .container .description {
+        width: 100%;
+    }
+
+    .services-container {
+        flex-wrap: wrap;
+    }
+    .service {
+        width: 48%;
+    }
+
+    .container .card {
+        width: 31%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .header, .header.active, .home, .sobre, .habilidades, .servicos, .projetos, .footer {
+        padding: 1rem 2rem;
+    }
+    .header {
+        min-height: 15vh;
+        background: var(--secondary-color);
+    }
+    .header .menu ul {
+        position: absolute;
+        top: 15vh;
+        right: -100%;
+        width: 80%;
+        min-height: 70vh;
+        background-color: var(--secondary-color);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all .5s ease;
+        box-shadow: -10px 12px 15px 0px rgba(0,0,0,.5);
+    }
+    .header .menu ul li {
+        margin: 15px 0;
+    }
+    .header .menu ul li a {
+        font-size: 1.2em;
+    }
+    .header .menu-icon {
+        display: block;
+        transition: all .5s ease;
+    }
+
+    .home .text-container {
+        width: 100%;
+    }
+    .home .text-container h1 {
+        font-size: 3rem;
+        line-height: 50px;
+        margin-bottom: 15px;
+    }
+
+    .servicos {
+        gap: 30px;
+    }
+    .service {
+        width: 100%;
+    }
+
+    .projetos .container {
+        gap: 50px 10px;
+    }
+    .container .card {
+        width: 48%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .sobre .container .illustration img {
+        width: 100%;
+    }
+
+    .projetos .container {
+        gap: 30px;
+    }
+    .container .card {
+        width: 100%;
+    }
+
+    .footer {
+        flex-direction: column-reverse;
+        gap: 15px;
+    }
+    .footer .icons li:first-child {
+        padding-left: 0;
+    }
 }

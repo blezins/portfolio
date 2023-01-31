@@ -21,7 +21,7 @@ ScrollReveal().reveal('.illustration', {
 // Descrição - Sobre
 ScrollReveal().reveal('.description', {
     delay: 300,
-    origin: 'right',
+    origin: 'bottom',
     distance: '150px',
     duration: 500
 })
