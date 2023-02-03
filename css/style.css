@@ -200,10 +200,32 @@ html {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    gap: 25px;
 }
 .habilidades h1 {
     font-size: 2em;
     color: var(--contrast-color);
+}
+.habilidades .subtitles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.habilidades .subtitles .subtitle {
+    display: flex;
+    align-items: center;
+    color: var(--contrast-color);
+}
+.subtitle .color {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+}
+.subtitle .purple {
+    background-color: var(--vivid-color);
+}
+.subtitle .white {
+    background-color: var(--contrast-color);
 }
 .habilidades .skills {
     display: flex;
@@ -219,15 +241,23 @@ html {
     justify-content: center;
     align-items: center;
     padding: 10px 15px;
-    background: var(--vivid-color);
     border-radius: 15px;
     user-select: none;
     font-size: 1.1em;
     cursor: pointer;
     transition: .6s;
 }
-.habilidades .skills .skill:hover {
+.habilidades .skills .skill.dominate {
+    background: var(--vivid-color);
+}
+.habilidades .skills .skill.studying {
+    background: var(--contrast-color);
+}
+.habilidades .skills .dominate:hover {
     background: var(--vivid-color-hover);
+}
+.habilidades .skills .studying:hover {
+    filter: brightness(75%);
 }
 .habilidades .skills .skill i {
     margin-left: 5px;
