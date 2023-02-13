@@ -188,7 +188,21 @@ html {
     text-decoration: none;
     color: var(--vivid-color);
 }
-
+.sobre .container .description .btn {
+    text-align: center;
+    width: 40%;
+    background: var(--vivid-color);
+    text-decoration: none;
+    color: var(--contrast-color);
+    padding: .5em 1.375em;
+    border-radius: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all .4s ease;
+}
+.sobre .container .description .btn:hover {
+    background: var(--vivid-color-hover);
+}
 
 
 /* Habilidades */
@@ -571,6 +585,10 @@ html {
 
 @media screen and (max-width: 500px) {
     .sobre .container .illustration img {
+        width: 100%;
+    }
+    .sobre .container .description .btn {
+        text-align: center;
         width: 100%;
     }
 
